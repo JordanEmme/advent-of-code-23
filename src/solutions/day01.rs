@@ -44,7 +44,7 @@ fn find_line_number(line: &str) -> u16 {
             ten = 10 * left_char.to_string().parse::<u16>().unwrap();
             found_ten = true;
         }
-        if right_char.is_numeric() && !found_unit{
+        if right_char.is_numeric() && !found_unit {
             unit = right_char.to_string().parse::<u16>().unwrap();
             found_unit = true;
         }
