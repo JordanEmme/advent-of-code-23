@@ -22,7 +22,7 @@ fn rewrite(original_line: &str) -> String {
     rewritten_line = rewritten_line.replace("two", "t2"); //because of eightwo
     rewritten_line = rewritten_line.replace("three", "t3e"); // because of eighthree and threeight
     rewritten_line = rewritten_line.replace("four", "4");
-    rewritten_line = rewritten_line.replace("five", "5e"); // because of fiveeight
+    rewritten_line = rewritten_line.replace("five", "5e"); // because of fiveight
     rewritten_line = rewritten_line.replace("six", "6");
     rewritten_line = rewritten_line.replace("seven", "7n"); // because of sevenine
     rewritten_line = rewritten_line.replace("eight", "e8"); // because of nineight
