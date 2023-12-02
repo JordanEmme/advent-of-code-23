@@ -1,9 +1,7 @@
 pub fn solution_part_one(input: &str) -> u16 {
-    let mut sum: u16 = 0u16;
-    input.lines().for_each(|line| {
-        sum += find_line_number(line);
-    });
-    return sum;
+    return input
+        .lines()
+        .fold(0u16, |sum: u16, line: &str| sum + find_line_number(line));
 }
 
 pub fn solution_part_two(input: &str) -> u16 {
