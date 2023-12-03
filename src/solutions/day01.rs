@@ -1,4 +1,5 @@
-pub fn solution_part_one(input: &str) -> u32 { // max is potentially 99,000 => need u32
+pub fn solution_part_one(input: &str) -> u32 {
+    // max is potentially 99,000 => need u32
     return input
         .lines()
         .fold(0u32, |sum: u32, line: &str| sum + find_line_number(line));

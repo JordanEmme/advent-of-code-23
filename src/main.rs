@@ -17,4 +17,8 @@ fn main() {
         "Part one: {}",
         day02::solution_part_one(include_str!("../inputs/day02.txt"))
     );
+    println!(
+        "Part two: {}",
+        day02::solution_part_two(include_str!("../inputs/day02.txt"))
+    );
 }
