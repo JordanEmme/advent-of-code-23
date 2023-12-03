@@ -1,11 +1,11 @@
-pub fn solution_part_one(input: &str) -> u16 {
+pub fn solution_part_one(input: &str) -> u32 { // max is potentially 99,000 => need u32
     return input
         .lines()
-        .fold(0u16, |sum: u16, line: &str| sum + find_line_number(line));
+        .fold(0u32, |sum: u32, line: &str| sum + find_line_number(line));
 }
 
-pub fn solution_part_two(input: &str) -> u16 {
-    let mut sum: u16 = 0u16;
+pub fn solution_part_two(input: &str) -> u32 {
+    let mut sum: u32 = 0u32;
     input.lines().for_each(|line| {
         let rewritten_line = rewrite(line);
         sum += find_line_number(&*rewritten_line);
@@ -28,10 +28,10 @@ fn rewrite(original_line: &str) -> String {
     return rewritten_line;
 }
 
-fn find_line_number(line: &str) -> u16 {
+fn find_line_number(line: &str) -> u32 {
     let characters: Vec<char> = line.chars().collect();
-    let mut ten: u16 = 0u16;
-    let mut unit: u16 = 0u16;
+    let mut ten: u32 = 0u32;
+    let mut unit: u32 = 0u32;
     let mut found_ten: bool = false;
     let mut found_unit: bool = false;
     let mut offset: usize = 0usize;
@@ -39,11 +39,11 @@ fn find_line_number(line: &str) -> u16 {
         let left_char = characters[offset];
         let right_char = characters[characters.len() - offset - 1];
         if left_char.is_numeric() && !found_ten {
-            ten = 10 * left_char.to_string().parse::<u16>().unwrap();
+            ten = 10 * left_char.to_string().parse::<u32>().unwrap();
             found_ten = true;
         }
         if right_char.is_numeric() && !found_unit {
-            unit = right_char.to_string().parse::<u16>().unwrap();
+            unit = right_char.to_string().parse::<u32>().unwrap();
             found_unit = true;
         }
         offset += 1;
